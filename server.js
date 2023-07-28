@@ -3,14 +3,18 @@ const express = require('express');
 const exphbs = require('express-handlebars');
 const routes = require('./controllers');
 const sequelize = require('./config/connection');
+const uuid = require('uuid');
 // initalize sequelize with session store
 const SequelizeStore = require("connect-session-sequelize")(session.Store);
 
 const app = express();
 const PORT = process.env.PORT || 3001;
+
+const sessionSecret = uuid.v4();
+
 // cookie properties for session
 const sess = {
-    secret: 'this is a secret',
+    secret: sessionSecret,
     cookie: { maxAge: 300000 },
     resave: false,
     saveUninitialized: true,
