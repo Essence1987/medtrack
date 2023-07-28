@@ -5,6 +5,7 @@ const routes = require('./controllers');
 const sequelize = require('./config/connection');
 const uuid = require('uuid');
 const authRoutes = require('./controllers/api/auth.js')
+const session = require("express-session");
 // initalize sequelize with session store
 const SequelizeStore = require("connect-session-sequelize")(session.Store);
 
@@ -22,7 +23,9 @@ const sess = {
     store: new SequelizeStore({ db: sequelize }),
 };
 
+// session middleware
 app.use(session(sess));
+
 // Create the Handlebars.js engine object with custom helper functions
 const hbs = exphbs.create({ helpers });
 // Inform Express.js which template engine we're using
