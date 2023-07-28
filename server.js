@@ -4,6 +4,7 @@ const exphbs = require('express-handlebars');
 const routes = require('./controllers');
 const sequelize = require('./config/connection');
 const uuid = require('uuid');
+const authRoutes = require('./controllers/api/auth.js')
 // initalize sequelize with session store
 const SequelizeStore = require("connect-session-sequelize")(session.Store);
 
@@ -33,6 +34,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use(routes);
+app.use(authRoutes);
 
 sequelize.sync({ force: false }).then(() => {
   app.listen(PORT, () => console.log('Now listening'));
