@@ -20,6 +20,13 @@ Students.init(
       allowNull: false,
     },
   },
+  {
+    sequelize,
+    timestamps: false,
+    freezeTableName: true,
+    underscored: true,
+    modelName: 'students',
+  }
 );   
 
 
@@ -32,12 +39,6 @@ async function createStudentTable() {
   }
 }
 
-{
-  sequelize,
-  timestamps: false,
-  freezeTableName: true,
-  underscored: true,
-  modelName: 'students',
-}
+
 
 module.exports = Students;
