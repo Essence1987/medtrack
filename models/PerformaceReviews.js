@@ -44,4 +44,13 @@ PerformanceReview.init(
   } 
 );
 
+async function createPerformaceReviewTable() {
+  try {
+    await PerformanceReview.sync({ force: true });
+    console.log('Performace Review table was created succesfully.');
+  } catch (error) {
+    console.log('Error creating Performace Review table:', error);
+    
+  }
+}
 module.exports = PerformanceReview;
