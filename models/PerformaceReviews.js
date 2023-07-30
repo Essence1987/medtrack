@@ -14,27 +14,34 @@ PerformanceReview.init(
       type: DataTypes.INTEGER,
       allowNull: false,
     },
-
-  
-  }
-
-
-
-
-
-
-
-
-
-
-{
-  sequelize,
-  timestamps: false,
-  freezeTableName: true,
-  underscored: true,
-  modelName: 'students',
-}
+    ClinicalJudgmentRating: { 
+      type: DataTypes.INTEGER,
+      allowNull: false,
+    },
+    TeachingSkillsRating: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+    },
+    HumanisticQualitiesRating: { 
+      type: DataTypes.INTEGER,
+      allowNull: false,
+    },
+    OverallExperienceRating: { 
+      type: DataTypes.INTEGER,
+      allowNull: false,
+    },
+    OverallExperienceComments: { 
+      type: DataTypes.TEXT,
+      allowNull: false,
+    },
+  },
+  { 
+    sequelize,
+    timestamps: false,
+    freezeTableName: true,
+    underscored: true,
+    modelName: 'PerformanceReview', 
+  } 
 );
-
 
 module.exports = PerformanceReview;
