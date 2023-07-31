@@ -16,7 +16,7 @@ Students.init(
       allowNull: false,
     },
     YearOfTraining: {
-      type: DataTypes.INTEGER,
+      type: DataTypes.STRING(50),
       allowNull: false,
     },
   },
