@@ -7,7 +7,7 @@ const router = express.Router();
 // User Registration
 router.post('/register', async (req, res) => {
     try {
-        const {usename, email, password} = req.body;
+        const {username, email, password} = req.body;
         const hashedPassword = await bcrypt.hash(password, 10);
 
         const user = await User.create({ username, email, password: hashedPassword });
@@ -23,7 +23,7 @@ router.post('/register', async (req, res) => {
 
 router.post('/login', async (req, res) => {
     try {
-        const { usename, password } = req.body;
+        const { username, password } = req.body;
 
         const user = await User.findOne({ where: { username } });
         if (!user) {
