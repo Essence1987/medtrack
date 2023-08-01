@@ -14,7 +14,7 @@ PerformanceReview.init(
       type: DataTypes.INTEGER,
       allowNull: false,
     },
-    ClinicalJudgmentRating: { 
+    ClinicalJudgmentRating: {
       type: DataTypes.INTEGER,
       allowNull: false,
     },
@@ -22,35 +22,26 @@ PerformanceReview.init(
       type: DataTypes.INTEGER,
       allowNull: false,
     },
-    HumanisticQualitiesRating: { 
+    HumanisticQualitiesRating: {
       type: DataTypes.INTEGER,
       allowNull: false,
     },
-    OverallExperienceRating: { 
+    OverallExperienceRating: {
       type: DataTypes.INTEGER,
       allowNull: false,
     },
-    OverallExperienceComments: { 
+    OverallExperienceComments: {
       type: DataTypes.TEXT,
       allowNull: false,
     },
   },
-  { 
+  {
     sequelize,
     timestamps: false,
     freezeTableName: true,
     underscored: true,
-    modelName: 'PerformanceReview', 
-  } 
+    modelName: "PerformanceReview",
+  }
 );
 
-async function createPerformaceReviewTable() {
-  try {
-    await PerformanceReview.sync({ force: true });
-    console.log('Performace Review table was created succesfully.');
-  } catch (error) {
-    console.log('Error creating Performace Review table:', error);
-    
-  }
-}
 module.exports = PerformanceReview;
