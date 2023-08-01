@@ -1,16 +1,28 @@
-const { DataTypes } = require("sequelize");
+const { DataTypes, Model } = require("sequelize");
 const sequelize = require("../config/connection");
 
-const Faculty = sequelize.define("Faculty", {
-  FacultyId: {
-    type: DataTypes.INTEGER,
-    primaryKey: true,
-    autoIncrement: true,
-  },
-  FacultyName: {
-    type: DataTypes.STRING(100),
-    allowNull: false,
-  },
-});
+class Faculty extends Model {}
 
-module.export = Faculty; 
+Faculty.init(
+  {
+    FacultyId: {
+      type: DataTypes.UUID,
+      defaultValue: DataTypes.UUIDV4,
+      primaryKey: true,
+      autoIncrement: false,
+    },
+    FacultyName: {
+      type: DataTypes.STRING(100),
+      allowNull: false,
+    },
+  },
+  {
+    sequelize,
+    timestamps: false,
+    freezeTableName: true,
+    underscored: true,
+    modelName: "faculty",
+  }
+);
+
+module.exports = Faculty;
