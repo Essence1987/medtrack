@@ -10,6 +10,7 @@ const session = require("express-session");
 const SequelizeStore = require("connect-session-sequelize")(session.Store);
 const models = require('./models')
 const protect = require('./controllers/protect');
+const dashboard = require('./controllers/dashboard');
 
 const app = express();
 const PORT = process.env.PORT || 3001;
@@ -41,9 +42,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 /* app.use(routes); */
 
-app.get('/dashboard', protect, (req, res) => {
-  res.render('dashboard');
-});
+app.get('/dashboard', protect, dashboard);
 
 app.use(authRoutes);
 
