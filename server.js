@@ -8,6 +8,7 @@ const authRoutes = require('./controllers/api/auth.js')
 const session = require("express-session");
 // initalize sequelize with session store
 const SequelizeStore = require("connect-session-sequelize")(session.Store);
+const protect = require('./controllers/protect');
 
 const app = express();
 const PORT = process.env.PORT || 3001;
@@ -27,7 +28,8 @@ const sess = {
 app.use(session(sess));
 
 // Create the Handlebars.js engine object with custom helper functions
-const hbs = exphbs.create({ helpers });
+const hbs = exphbs.create({ /* helpers */ });
+
 // Inform Express.js which template engine we're using
 app.engine('handlebars', hbs.engine);
 app.set('view engine', 'handlebars');
@@ -36,9 +38,14 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.use(routes);
+/* app.use(routes); */
+
+app.get('/dashboard', protect, (req, res) => {
+  res.render('dashboard');
+});
+
 app.use(authRoutes);
 
 sequelize.sync({ force: false }).then(() => {
-  app.listen(PORT, () => console.log('Now listening'));
+  app.listen(PORT, () => console.log('Now listening on port ' + PORT + '!'));
 });

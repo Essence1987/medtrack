@@ -15,6 +15,6 @@ const Faculty = sequelize.define("Faculty", {
         type: DataTypes.STRING(100),
         allowNull: false,
 
-  });
+  }});
 
   module.exoprts = Students;
