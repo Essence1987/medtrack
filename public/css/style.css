@@ -1,0 +1,11 @@
+.nav-bg-color {
+    background-color: skyblue;
+    color: darkblue;
+    border: solid red;
+}
+
+.main-header {
+    justify-content: center;
+    align-items: center;
+    border: solid red;
+}
