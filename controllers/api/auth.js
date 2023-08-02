@@ -1,19 +1,21 @@
 const express = require('express');
-const bcrypt = require('bcrypt');
-
-const User = require('../../models/user');
 const router = express.Router();
+
+const {User} = require('../../models');
 
 // User Registration
 router.post('/register', async (req, res) => {
     try {
         const {username, email, password} = req.body;
-        const hashedPassword = await bcrypt.hash(password, 10);
 
-        const user = await User.create({ username, email, password: hashedPassword });
+        const user = await User.create({ username, email, password});
 
-        req.session.userId = user.id; // Stores user ID in the session
-        res.json({ message: 'User registered successfully', user });
+        req.session.save(() => {
+            req.session.userId = user.id
+            req.session.username = user.username
+            req.session.loggedIn = true
+        })
+        res.json({ message: 'User registered successfully'}, user);
     } catch (error) {
         res.status(500).json({ error: 'An error has occured. Please try again later.' });
     }
@@ -30,13 +32,17 @@ router.post('/login', async (req, res) => {
             return res.status(401).json({ error: 'Incorrect username or password' });
         }
 
-        const isPasswordValid = await bcrypt.compare(password, user.password);
+        const isPasswordValid = user.checkPassword(password)
         if (!isPasswordValid) {
             return res.status(401).json({ error: 'Incorrect username or password' });
         }
 
-        req.session.userId = user.id; // Stores user ID in the session
-        res.json({ message: 'User logged in successfully', user });
+        req.session.save(() => {
+            req.session.userId = user.id
+            req.session.username = user.username
+            req.session.loggedIn = true
+        })
+        res.json({ message: 'User logged in successfully'}, user);
     } catch (error) {
         res.status(500).json({ error: 'An error has occured. Please try again later.' });
     }
