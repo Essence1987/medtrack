@@ -15,10 +15,7 @@
 //       type: DataTypes.STRING(100),
 //       allowNull: false,
 //     },
-    // YearOfTraining: {
-    //   type: DataTypes.STRING(50),
-    //   allowNull: false,
-    // },
+  
 //   },
 //   {
 //     sequelize,
