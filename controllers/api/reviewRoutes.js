@@ -1,11 +1,22 @@
 const express = require('express');
 const router = express.Router();
 const PerformanceReview = require('../../models/performanceReview');
+const Faculty = require('../../models/faculty');
 
 // Route handler for /api/add-review (GET)
-router.get('/add-review', (req, res) => {
-  // This is the same as before if you need to render the addReview.handlebars template
-  res.render('addReview');
+router.get('/add-review', async (req, res) => {
+  try {
+    // Get a list of faculty members' names to populate the dropdown in the form
+    const facultyMembers = await Faculty.findAll({
+      attributes: ['FacultyName'],
+    });
+
+    // Pass the faculty members' names to the addReview template
+    res.render('addReview', { facultyMembers });
+  } catch (error) {
+    console.error('Error fetching faculty members: ', error);
+    res.status(500).send('Server error');
+  }
 });
 
 // Route handler for /api/add-review (POST)
@@ -19,6 +30,7 @@ router.post('/add-review', async (req, res) => {
       HumanisticQualitiesRating,
       OverallExperienceRating,
       OverallExperienceComments,
+      FacultyName,
     } = req.body;
 
     // Insert the data into the PerformanceReview table
@@ -29,6 +41,7 @@ router.post('/add-review', async (req, res) => {
       HumanisticQualitiesRating,
       OverallExperienceRating,
       OverallExperienceComments,
+      FacultyName, // Save the selected faculty member's name in the PerformanceReview table
     });
 
     // Redirect to the /dashboard page after the INSERT completes
