@@ -41,3 +41,7 @@ div.first-container {
     margin-top: 100px !important;
     background: url("")
 }
+
+.get-started-btn {
+    border-radius: 8px !important;
+}

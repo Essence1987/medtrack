@@ -5,6 +5,14 @@ class PerformanceReview extends Model {}
 
 PerformanceReview.init(
   {
+    FacultyName: {
+      type: DataTypes.STRING(100),
+      allowNull: false,
+      references: {
+        model: 'faculty',
+        key: 'FacultyName',
+      },
+    },
     PerformanceReviewId: {
       type: DataTypes.INTEGER,
       primaryKey: true,
