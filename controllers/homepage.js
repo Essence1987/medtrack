@@ -9,7 +9,9 @@ router.get('/login', (req, res) => {
 });
 
 router.get('/signup', (req, res) => {
+    console.log('working')
     res.render('signup')
 });
+
 
 module.exports = router
