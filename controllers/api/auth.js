@@ -24,6 +24,7 @@ router.post('/register', async (req, res) => {
 // User Login
 
 router.post('/login', async (req, res) => {
+    console.log(req.body);
     try {
         const { username, password } = req.body;
 
@@ -41,8 +42,9 @@ router.post('/login', async (req, res) => {
             req.session.userId = user.id
             req.session.username = user.username
             req.session.loggedIn = true
+            res.redirect('/dashboard')
         })
-        res.json({ message: 'User logged in successfully'}, user);
+        // res.json({ message: 'User logged in successfully'}, user);
     } catch (error) {
         res.status(500).json({ error: 'An error has occured. Please try again later.' });
     }
