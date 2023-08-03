@@ -1,5 +1,6 @@
 [
     {
+      "FacultyName": "D Pepper M.D.",
       "MedicalKnowledgeRating": 9,
       "ClinicalJudgmentRating": 7,
       "TeachingSkillsRating": 8,
@@ -8,6 +9,7 @@
       "OverallExperienceComments": "Great rotation"
     },
     {
+      "FacultyName": "Sigmund Freud M.D.",
       "MedicalKnowledgeRating": 8,
       "ClinicalJudgmentRating": 7,
       "TeachingSkillsRating": 7,
