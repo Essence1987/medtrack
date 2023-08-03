@@ -33,6 +33,12 @@ router.post('/add-review', async (req, res) => {
       FacultyName,
     } = req.body;
 
+    // Get the logged-in user's username from the session
+    const username = req.session.username;
+
+    // Find the user based on the username to get the UserId
+    const user = await User.findOne({ where: { username } });
+
     // Insert the data into the PerformanceReview table
     await PerformanceReview.create({
       MedicalKnowledgeRating,
@@ -42,6 +48,7 @@ router.post('/add-review', async (req, res) => {
       OverallExperienceRating,
       OverallExperienceComments,
       FacultyName, // Save the selected faculty member's name in the PerformanceReview table
+      UserId: userId, // Associate the review with the user ID
     });
 
     // Redirect to the /dashboard page after the INSERT completes
