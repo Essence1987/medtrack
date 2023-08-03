@@ -6,10 +6,10 @@ class Faculty extends Model {}
 Faculty.init(
   {
     FacultyId: {
-      type: DataTypes.UUID,
-      defaultValue: DataTypes.UUIDV4,
+      type: DataTypes.INTEGER,
+      allowNull: false,
       primaryKey: true,
-      autoIncrement: false,
+      autoIncrement: true,
     },
     FacultyName: {
       type: DataTypes.STRING(100),
