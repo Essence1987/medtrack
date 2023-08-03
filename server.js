@@ -8,7 +8,7 @@ const authRoutes = require('./controllers/api/auth.js')
 const session = require("express-session");
 // initalize sequelize with session store
 const SequelizeStore = require("connect-session-sequelize")(session.Store);
-const models = require('./models')
+const models = require('./models');
 const protect = require('./controllers/protect');
 
 const app = express();
