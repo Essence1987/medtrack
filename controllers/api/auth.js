@@ -16,7 +16,7 @@ router.post('/register', async (req, res) => {
             req.session.loggedIn = true
         })
         
-        res.json({ message: 'User registered successfully', user }); // Fixed response format
+        res.redirect('/');
     } catch (error) {
         res.status(500).json({ error: 'An error has occurred. Please try again later.' });
     }
