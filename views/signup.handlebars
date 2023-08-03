@@ -1,9 +1,9 @@
 <div class="columns login-page">
-  <div class="column is-half is-offset-one-quarter">
+  <form class="column is-half is-offset-one-quarter" action="/api/user/signup" method="POST">
     <h1>Sign Up</h1>
     <div class="field">
       <p class="control has-icons-left has-icons-right">
-        <input class="input" type="email" placeholder="Email">
+        <input class="input" type="email" placeholder="Email" name="email">
         <span class="icon is-small is-left">
           <i class="fas fa-envelope"></i>
         </span>
@@ -14,7 +14,7 @@
     </div>
     <div class="field">
       <p class="control has-icons-left">
-        <input class="input" type="password" placeholder="Username">
+        <input class="input" type="username" placeholder="Username" name="username">
         <span class="icon is-small is-left">
           <i class="fa-solid fa-user"></i>
         </span>
@@ -22,7 +22,7 @@
     </div>
     <div class="field">
       <p class="control has-icons-left">
-        <input class="input" type="password" placeholder="Password">
+        <input class="input" type="password" placeholder="Password" name="password">
         <span class="icon is-small is-left">
           <i class="fas fa-lock"></i>
         </span>
@@ -35,6 +35,6 @@
         </button>
       </p>
     </div>
-  </div>
+  </form>
 </div>
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.4.1/mdb.min.js"></script>
