@@ -1,30 +1,52 @@
-<form>
-    <div class="field">
-        <label class="label">Label</label>
-        <div class="control">
-            <input class="input" type="text" placeholder="Text input">
+<div class="columns add-review-full">
+    <form class="addReview container column is-half is-offset-one-quarter control" action="/add-review" method="POST">
+        <div class="control is-expanded dr-dropdown" id="dr-select">
+            <p class="physician-select"><strong>Select the Physician You Would Like to Review:</strong></p>
+            <div class="select is-fullwidth inner-dr-dropdown">
+                <select>
+                <option>Select Physician</option>
+                <option>D Pepper M.D.</option>
+                <option>Sigmund Freud M.D.</option>
+                <option>H Lecter M.D.</option>
+                </select>
+            </div>
         </div>
-        <p class="help">This is a help text</p>
-    </div>
-    <div class="field">
-        <label class="label">Label</label>
-        <div class="control">
-            <input class="input" type="text" placeholder="Text input">
-        </div>
-        <p class="help">This is a help text</p>
-    </div>
-    <div class="field">
-        <label class="label">Label</label>
-        <div class="control">
-            <input class="input" type="text" placeholder="Text input">
-        </div>
-        <p class="help">This is a help text</p>
-    </div>
         <div class="field">
-        <label class="label">Label</label>
-        <div class="control">
-            <input class="input" type="text" placeholder="Text input">
+            <p class="question-title label">On a scale of 1-10, where 0 is poor and 10 is excellent, please rate the following:</p>
+            <label class="subtitle">The Physician's Medical Knowledge:</label>
+            <div class="control">
+                <input class="input" type="number" placeholder="Enter Number" name="MedicalKnowledgeRating" min="1" max="10">
+            </div>
         </div>
-        <p class="help">This is a help text</p>
-    </div>
-</form>
+        <div class="field">
+            <label class="subtitle">The Physician's Clinical Judgment</label>
+            <div class="control">
+                <input class="input" type="number" placeholder="Enter Number" name="ClinicalJudgmentRating" min="1" max="10">
+            </div>
+        </div>
+        <div class="field">
+            <label class="subtitle">The Physician's Teaching Skills</label>
+            <div class="control">
+                <input class="input" type="number" placeholder="Enter Number" name="TeachingSkillsRating" min="1" max="10">
+            </div>
+        </div>
+            <div class="field">
+            <label class="subtitle">The Physician's Humanistic Qualities</label>
+            <div class="control">
+                <input class="input" type="number" placeholder="Enter Number" name="HumanisticQualitiesRating" min="1" max="10">
+            </div>
+        </div>
+        <div>
+            <div class="field">
+            <label class="label">Your Overall Experience</label>
+            <div class="control">
+                <input class="input" type="number" placeholder="Enter Number" name="OverallExperienceRating" min="1" max="10">
+            </div>
+        </div>
+        <textarea class="field textarea" placeholder="e.g. Hello world"></textarea>
+        <div class="field is-grouped is-grouped-centered">
+            <p class="control"><a class="button is-info">Submit</a></p>
+            <p class="control"><a class="button is-light">Cancel</a></p>
+        </div>
+    </form>
+</div>
