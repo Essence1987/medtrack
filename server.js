@@ -1,15 +1,15 @@
 const path = require('path');
 const express = require('express');
 const exphbs = require('express-handlebars');
-const routes = require('./controllers');
 const sequelize = require('./config/connection');
 const uuid = require('uuid');
-const authRoutes = require('./controllers/api/auth.js')
 const session = require("express-session");
 // initalize sequelize with session store
 const SequelizeStore = require("connect-session-sequelize")(session.Store);
-const models = require('./models');
-const protect = require('./controllers/protect');
+const models = require('./models')
+// const protect = require('./controllers/protect');
+// const dashboard = require('./controllers/dashboard');
+const route = require('./controllers')
 
 const app = express();
 const PORT = process.env.PORT || 3001;
@@ -41,11 +41,9 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 /* app.use(routes); */
 
-app.get('/dashboard', protect, (req, res) => {
-  res.render('dashboard');
-});
-
-app.use(authRoutes);
+// app.get('/dashboard', protect, dashboard);
+app.use(route);
+// app.use(authRoutes);
 
 sequelize.sync({ force: false }).then(() => {
   app.listen(PORT, () => console.log('Now listening on port ' + PORT + '!'));
