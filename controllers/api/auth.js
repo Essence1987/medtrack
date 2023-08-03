@@ -15,9 +15,10 @@ router.post('/register', async (req, res) => {
             req.session.username = user.username
             req.session.loggedIn = true
         })
-        res.json({ message: 'User registered successfully'}, user);
+        
+        res.json({ message: 'User registered successfully', user }); // Fixed response format
     } catch (error) {
-        res.status(500).json({ error: 'An error has occured. Please try again later.' });
+        res.status(500).json({ error: 'An error has occurred. Please try again later.' });
     }
 });
 
@@ -46,7 +47,7 @@ router.post('/login', async (req, res) => {
         })
         // res.json({ message: 'User logged in successfully'}, user);
     } catch (error) {
-        res.status(500).json({ error: 'An error has occured. Please try again later.' });
+        res.status(500).json({ error: 'An error has occurred. Please try again later.' });
     }
 });
 
