@@ -10,6 +10,8 @@
     <link
     href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.4.1/mdb.min.css"
     rel="stylesheet"/>
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css">
+    <link rel="stylesheet" href="fontawesome-stars.css">
     <script src="https://kit.fontawesome.com/4268e3dc68.js" crossorigin="anonymous"></script>
   <title>Med-Track</title>
 </head>
@@ -129,6 +131,22 @@
             </div>
         </section>
     </main>
+    <select id="example">
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+    </select>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+    <script src="jquery.barrating.min.js"></script>
+    <script type="text/javascript">
+        $(function() {
+            $('#example').barrating({
+                theme: 'fontawesome-stars'
+            });
+        });
+    </script>
       <!-- Pills content -->
     <script src="../public/js/login.js"></script>
     <!-- Footer -->
