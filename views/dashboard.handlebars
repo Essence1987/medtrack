@@ -3,10 +3,10 @@
 
 <h3>Your Performance Reviews:</h3>
 <ul>
-    {{#each performanceReviews}}
+    {{#each userReviews as |userReview|}}
     <li>
-        <h4>Faculty Name: {{this.FacultyName}}</h4>
-        <p>Medical Knowledge Rating: {{this.MedicalKnowledgeRating}}</p>
+        <h4>Faculty Name: {{userReview.FacultyName}}</h4>
+        <p>Medical Knowledge Rating: {{userReview.MedicalKnowledgeRating}}</p>
         <p>Clinical Judgment Rating: {{this.ClinicalJudgmentRating}}</p>
         <p>Teaching Skills Rating: {{this.TeachingSkillsRating}}</p>
         <p>Humanistic Qualities Rating: {{this.HumanisticQualitiesRating}}</p>

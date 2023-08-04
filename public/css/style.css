@@ -78,3 +78,7 @@ div.second-container {
 .subtitle {
     font-size: medium;
 }
+
+.submitBtn {
+    margin-top: 8px;
+}
