@@ -1,18 +1,11 @@
 const { DataTypes, Model } = require("sequelize");
 const sequelize = require("../config/connection");
+const User = require("./user");
 
 class PerformanceReview extends Model {}
 
 PerformanceReview.init(
   {
-    /* FacultyName: {
-      type: DataTypes.STRING(100),
-      allowNull: false,
-      references: {
-        model: 'faculty',
-        key: 'FacultyName',
-      },
-    }, */
     PerformanceReviewId: {
       type: DataTypes.INTEGER,
       primaryKey: true,
@@ -42,6 +35,10 @@ PerformanceReview.init(
       type: DataTypes.TEXT,
       allowNull: false,
     },
+    UserId: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+    },
   },
   {
     sequelize,
@@ -51,5 +48,8 @@ PerformanceReview.init(
     modelName: "PerformanceReview",
   }
 );
+
+// Create a foreign key association between PerformanceReview and User
+PerformanceReview.belongsTo(User, { foreignKey: "UserId", targetKey: "id" });
 
 module.exports = PerformanceReview;

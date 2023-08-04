@@ -1,24 +1,25 @@
 [
-    {
-      "FacultyName": "D Pepper M.D.",
-      "MedicalKnowledgeRating": 9,
-      "ClinicalJudgmentRating": 7,
-      "TeachingSkillsRating": 8,
-      "HumanisticQualitiesRating": 9,
-      "OverallExperienceRating": 8,
-      "OverallExperienceComments": "Great rotation"
-    },
-    {
-      "FacultyName": "Sigmund Freud M.D.",
-      "MedicalKnowledgeRating": 8,
-      "ClinicalJudgmentRating": 7,
-      "TeachingSkillsRating": 7,
-      "HumanisticQualitiesRating": 9,
-      "OverallExperienceRating": 9,
-      "OverallExperienceComments": "Learned a lot"
-    }
-  ]
-  
+  {
+    "FacultyName": "D Pepper M.D.",
+    "MedicalKnowledgeRating": 9,
+    "ClinicalJudgmentRating": 7,
+    "TeachingSkillsRating": 8,
+    "HumanisticQualitiesRating": 9,
+    "OverallExperienceRating": 8,
+    "OverallExperienceComments": "Great rotation",
+    "UserId": 3
+  },
+  {
+    "FacultyName": "Sigmund Freud M.D.",
+    "MedicalKnowledgeRating": 8,
+    "ClinicalJudgmentRating": 7,
+    "TeachingSkillsRating": 7,
+    "HumanisticQualitiesRating": 9,
+    "OverallExperienceRating": 9,
+    "OverallExperienceComments": "Learned a lot",
+    "UserId": 3
+  }
+]
 
 
 
