@@ -82,3 +82,7 @@ div.second-container {
 .submitBtn {
     margin-top: 8px;
 }
+
+.dashboard-full {
+    margin-top: 100px !important;
+}
