@@ -11,6 +11,8 @@ router.get('/add-review', async (req, res) => {
       attributes: ['FacultyName'],
     });
 
+  console.log(facultyMembers);
+
     // Pass the faculty members' names to the addReview template
     res.render('addReview', { facultyMembers });
   } catch (error) {
