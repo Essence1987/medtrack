@@ -1,4 +1,4 @@
-<script src="jquery.barrating.min.js"></script>
+{{!-- <script src="jquery.barrating.min.js"></script>
 <script type="text/javascript">
 
 <div class="br-wrapper br-theme-fontawesome-stars">
@@ -10,17 +10,18 @@
     <option value="5">5</option>
   </select>
   ...rating widget...
+</div> --}}
 
 <div class="columns add-review-full">
     <form class="addReview container column is-half is-offset-one-quarter control" action="/add-review" method="POST">
         <div class="control is-expanded dr-dropdown" id="dr-select">
             <p class="physician-select"><strong>Select the Physician You Would Like to Review:</strong></p>
             <div class="select is-fullwidth inner-dr-dropdown">
-                <select>
-                <option>Select Physician</option>
-                <option>D Pepper M.D.</option>
-                <option>Sigmund Freud M.D.</option>
-                <option>H Lecter M.D.</option>
+                <select name="FacultyName"> <!-- Add the name attribute to the select element -->
+                    <option>Select Physician</option>
+                    {{#each facultyMembers}} <!-- Loop through the facultyMembers -->
+                        <option>{{this.dataValues.FacultyName}}</option> <!-- Access the FacultyName property within dataValues -->
+                    {{/each}}
                 </select>
             </div>
         </div>
