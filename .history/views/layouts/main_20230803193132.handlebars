@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="./css/style.css">
+    <script src="https://kit.fontawesome.com/4268e3dc68.js" crossorigin="anonymous"></script>
+  <title>Med-Track</title>
+</head>
+
+<body>
+    <nav class="navbar is-fixed-top is-white" role="navigation" aria-label="main navigation">
+        <div class="navbar-brand">
+          <a class="navbar-item logo-text" href="/"><i class="fa-solid fa-comment-medical fa-md med-symbol"></i><strong>Med-Track</strong></a>
+          <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+          </a>
+        </div>
+        <div id="navbarBasicExample" class="navbar-menu">
+            <div class="navbar-start">
+                <a class="navbar-item" href="/">Home</a>
+                <!-- use handlebars to add function where user only sees if logged in -->
+                <a class="navbar-item" href="/dashboard">Dashboard</a>
+                <a class="navbar-item" href="/add-review">Add Review</a>
+                <div class="navbar-item has-dropdown is-hoverable">
+                    <a class="navbar-link">More</a>
+                    <div class="navbar-dropdown">
+                        <a class="navbar-item" href="#about">About</a>
+                        <a class="navbar-item" href="#contact">Contact</a>
+                        <hr class="navbar-divider">
+                        <a class="navbar-item">Any extra item?</a>
+                    </div>
+                </div>
+            </div>
+            <div class="navbar-end">
+                <div class="navbar-item">
+                    <div class="buttons">
+                        <a class="button is-info" href="/signup"><strong>Sign up</strong></a>
+                        <a class="button is-light" href="/login">Log in</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+    {{{ body }}}
+    <footer class="w3-container footer-section w3-center w3-opacity">  
+      <p class="w3-small">Made with love by the Med-Track team 💙</p>
+    </footer>
+    <script src="./js/test.js"></script>
+
+</body>
+
+</html>
