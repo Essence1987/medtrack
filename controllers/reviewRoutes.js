@@ -2,9 +2,10 @@ const express = require('express');
 const router = express.Router();
 const PerformanceReview = require('../models/performanceReview');
 const Faculty = require('../models/faculty');
+const protect = require('./protect');
 
 // Route handler for /api/add-review (GET)
-router.get('/add-review', async (req, res) => {
+router.get('/add-review', protect, async (req, res) => {
   try {
     // Get a list of faculty members' names to populate the dropdown in the form
     const facultyMembers = await Faculty.findAll({
