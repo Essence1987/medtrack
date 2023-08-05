@@ -14,7 +14,7 @@
         <div class="field">
             <p class="question-title label">On a scale of 1-10, where 0 is poor and 10 is excellent, please rate the following:</p>
             <label class="subtitle">The Physician's Medical Knowledge:</label>
-            <select id="example">
+            <select id="example" name="MedicalKnowledgeRating">
                 <option value="1">1</option>
                 <option value="2">2</option>
                 <option value="3">3</option>
@@ -26,13 +26,10 @@
                 <option value="9">9</option>
                 <option value="10">10</option>
             </select>
-            {{!-- <div class="control">
-                <input class="input" type="number" placeholder="Enter Rating" name="MedicalKnowledgeRating" min="1" max="10">
-            </div> --}}
         </div>
         <div class="field">
             <label class="subtitle">The Physician's Clinical Judgment</label>
-            <select id="example">
+            <select id="example" name="ClinicalJudgmentRating">
                 <option value="1">1</option>
                 <option value="2">2</option>
                 <option value="3">3</option>
@@ -44,13 +41,10 @@
                 <option value="9">9</option>
                 <option value="10">10</option>
             </select>
-            {{!-- <div class="control">
-                <input class="input" type="number" placeholder="Enter Rating" name="ClinicalJudgmentRating" min="1" max="10">
-            </div> --}}
         </div>
         <div class="field">
             <label class="subtitle">The Physician's Teaching Skills</label>
-            <select id="example">
+            <select id="example" name="TeachingSkillsRating">
                 <option value="1">1</option>
                 <option value="2">2</option>
                 <option value="3">3</option>
@@ -62,13 +56,10 @@
                 <option value="9">9</option>
                 <option value="10">10</option>
             </select>
-            {{!-- <div class="control">
-                <input class="input" type="number" placeholder="Enter Rating" name="TeachingSkillsRating" min="1" max="10">
-            </div> --}}
         </div>
-            <div class="field">
+        <div class="field">
             <label class="subtitle">The Physician's Humanistic Qualities</label>
-            <select id="example">
+            <select id="example" name="HumanisticQualitiesRating">
                 <option value="1">1</option>
                 <option value="2">2</option>
                 <option value="3">3</option>
@@ -80,14 +71,11 @@
                 <option value="9">9</option>
                 <option value="10">10</option>
             </select>
-            {{!-- <div class="control">
-                <input class="input" type="number" placeholder="Enter Rating" name="HumanisticQualitiesRating" min="1" max="10">
-            </div> --}}
         </div>
         <div>
             <div class="field">
             <label class="subtitle">Your Overall Experience</label>
-            <select id="example">
+            <select id="example" name="OverallExperienceRating">
                 <option value="1">1</option>
                 <option value="2">2</option>
                 <option value="3">3</option>
@@ -99,26 +87,14 @@
                 <option value="9">9</option>
                 <option value="10">10</option>
             </select>
-            {{!-- <div class="control">
-                <input class="input" type="number" placeholder="Enter Rating" name="OverallExperienceRating" min="1" max="10">
-            </div> --}}
         </div>
         <div>
             <label class="subtitle">Please Leave Any Additional Comments About Your Experience Here:</label>
             <textarea class="field textarea" placeholder="Enter Comments Here" name="OverallExperienceComments"></textarea>
         </div>
         <div class="field is-grouped is-grouped-centered submitBtn">
-            <p class="control"><a class="button is-info">Submit</a></p>
+            <p class="control"><button class="button is-info" type="submit">Submit</button></p>
             <p class="control"><a class="button is-light">Cancel</a></p>
         </div>
     </form>
 </div>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
-<script src="jquery.barrating.min.js"></script>
-<script type="text/javascript">
-   $(function() {
-      $('#example').barrating({
-        theme: 'fontawesome-stars'
-      });
-   });
-</script>

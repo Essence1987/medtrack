@@ -5,7 +5,8 @@ const protect = require('./protect');
 // Route handler for /dashboard
 router.get('/dashboard', protect, async (req, res) => {
     try {
-       // Get all performance reviews for the logged-in user
+        // Get all performance reviews for the logged-in user
+        console.log(req.session.userId); // Log the userId inside the route handler
         const userReviews = await PerformanceReviews.findAll({
             where: { UserId: req.session.userId },
         });
