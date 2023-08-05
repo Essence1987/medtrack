@@ -2,6 +2,7 @@ const express = require('express');
 const router = express.Router();
 const PerformanceReview = require('../models/performanceReview');
 const Faculty = require('../models/faculty');
+const User = require('../models/user');
 const protect = require('./protect');
 
 // Route handler for /api/add-review (GET)
