@@ -26,6 +26,26 @@ DB_PASSWORD='password'
 
 4. To start the server, run the command 'npm start' in the terminal. The server should now be listening.
 
+5. Navigate to "localhost:3001" to see the web application.
+
 ## Usage
+
+Upon loading the application, you will be presented with the following homepage:
+
+[![homepage.png](https://i.postimg.cc/Sxgybv44/homepage.png)](https://postimg.cc/cv8qQT6k)
+
+From here, you need to create a username/password on through the signup screen:
+
+[![signup.png](https://i.postimg.cc/vmpwQRSJ/signup.png)](https://postimg.cc/KKrHNWbf)
+
+Once complete, head to the login page and enter your username/passworc credentials:
+
+[![login.png](https://i.postimg.cc/rpvGggKG/login.png)](https://postimg.cc/R3LnZ71q)
+
+Now that you're logged in, you can now post reviews. Head to the "Add Review" page on the navigation bar and enter a review:
+
+[![add-review.png](https://i.postimg.cc/659rH85P/add-review.png)](https://postimg.cc/grTLjkhy)
+
+Click the "Submit" button at the bottom of the screen. Your reivew is now submitted and can be looked at by other students and the medical school board to assist in creating a better program. We thank you for your input!
 
 ## License
