@@ -23,7 +23,9 @@ div.second-container {
     background-size: cover;
     opacity: 80%;
 }
-
+.sub-context-hp {
+    margin-top: 50px;
+}
 .contact-section {
     padding: 40px !important;
 }
