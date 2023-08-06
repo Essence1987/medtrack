@@ -24,4 +24,27 @@ router.get('/dashboard', protect, async (req, res) => {
     }
 });
 
+router.post('/delete-review', protect, async (req, res) => {
+    try {
+        const { reviewId } = req.body;
+        console.log('Review ID to delete:', reviewId);
+        const userId = req.session.userId;
+        console.log(userId);
+
+        // Delete the selected review
+        await PerformanceReviews.destroy({
+            where: {
+                performance_review_id: reviewId,
+                UserId: userId,
+            },
+        });
+
+        // Redirect to the dashboard page after successful deletion
+        res.redirect('/dashboard');
+    } catch (error) {
+        console.error('Error deleting performance review:', error);
+        res.status(500).send('Error deleting performance review');
+    }
+});
+
 module.exports = router;

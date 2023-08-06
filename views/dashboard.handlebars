@@ -1,11 +1,14 @@
 <div class="dashboard-full">
-    <h1>Welcome to the Dashboard</h1>
-    <h2>Hello, {{username}}!</h2>
-
-    <h3>Your Performance Reviews:</h3>
-    <ul>
-        {{#each performanceReviews}}
-        <li>
+    <div class="db-header">
+        <h1>Welcome to the Dashboard</h1>
+        <h2>Hello, {{username}}!</h2>
+        <h3>Your Performance Reviews:</h3>
+    </div>
+    <div class="">
+        <ul class="review-cards">
+            {{#each performanceReviews}}
+            <li class="single-card box">
+            <!-- Add a delete button for each performance review -->
             <h4>Faculty Name: {{FacultyName}}</h4>
             <p>Medical Knowledge Rating: {{MedicalKnowledgeRating}}</p>
             <p>Clinical Judgment Rating: {{ClinicalJudgmentRating}}</p>
@@ -13,7 +16,12 @@
             <p>Humanistic Qualities Rating: {{HumanisticQualitiesRating}}</p>
             <p>Overall Experience Rating: {{OverallExperienceRating}}</p>
             <p>Overall Experience Comments: {{OverallExperienceComments}}</p>
-        </li>
-        {{/each}}
-    </ul>
+            <form action="/delete-review" method="POST">
+                <input type="hidden" name="reviewId" value="{{PerformanceReviewId}}">
+                <button type="submit" class="delete-btn">Delete Review</button>
+            </form>
+            </li>
+            {{/each}}
+        </ul>
+    </div>
 </div>
