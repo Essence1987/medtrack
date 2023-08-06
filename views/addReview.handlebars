@@ -3,13 +3,18 @@
         <div class="control is-expanded dr-dropdown" id="dr-select">
             <p class="physician-select"><strong>Select the Physician You Would Like to Review:</strong></p>
             <div class="select is-fullwidth inner-dr-dropdown">
-                <select name="FacultyName"> <!-- Add the name attribute to the select element -->
-                    <option>Select Physician</option>
+                <select id="facultySelect" name="FacultyName"> <!-- Add the name attribute to the select element -->
+                    <option value="">Select Physician</option>
                     {{#each facultyMembers}} <!-- Loop through the facultyMembers -->
                         <option>{{this.dataValues.FacultyName}}</option> <!-- Access the FacultyName property within dataValues -->
                     {{/each}}
+                    <option value="__add_new__">Add New Physician</option>
                 </select>
             </div>
+        </div>
+        <div id="newFacultyInput" style="display: none;">
+            <label class="subtitle">Enter the New Physician's Name:</label>
+            <input type="text" name="NewFacultyName" placeholder="New Physician's Name">
         </div>
         <div class="field">
             <p class="question-title label">On a scale of 1-10, where 0 is poor and 10 is excellent, please rate the following:</p>
@@ -98,3 +103,18 @@
         </div>
     </form>
 </div>
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        const facultySelect = document.getElementById("facultySelect");
+        const newFacultyInput = document.getElementById("newFacultyInput");
+
+        facultySelect.addEventListener("change", function() {
+            const selectedValue = facultySelect.value;
+            if (selectedValue === "__add_new__") {
+                newFacultyInput.style.display = "block";
+            } else {
+                newFacultyInput.style.display = "none";
+            }
+        });
+    });
+</script>
