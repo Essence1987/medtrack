@@ -1,8 +1,7 @@
-# MedTrack - Enhancing the Med School Experience
+# MedTrack - Enhancing the Medical School Experience
 
 ## Table of Contents
 - [Description](#description)
-- [Getting Started](#getting-started)
   - [Prerequisites](#prerequisites)
   - [Installation](#installation)
   - [Database Setup](#database-setup)
@@ -13,10 +12,10 @@
 - [API Routes](#api-routes)
 - [Technologies Used](#technologies-used)
 - [Contributing](#contributing)
-- [License](#license)
 - [Live Site](#live-site)
 - [Sources](#sources)
 - [Contact](#contact)
+- [License](#license)
 
 ## Description
 
@@ -45,12 +44,12 @@ From building this application, we learned the power and capabilities of incorpo
 
 ### Database Setup
 1. Create a MySQL database for the application.
-2. In the `config/connection.js` file, update the database configuration with your database credentials.
+2. In the '.config/connection.js' file, update the database configuration with your database credentials.
 
 ### Running the App
 To run the application, use the following command:
 
-The app will be accessible at `http://localhost:3001`.
+The app will be accessible at 'http://localhost:3001/'.
 
 ## Usage
 1. Register an account as a medical student using the registration form.
@@ -103,17 +102,16 @@ Click the "Submit" button at the bottom of the screen. Your review is now submit
 ## Contributing
 Contributions to MedTrack are welcome! If you find any bugs or want to add new features, please open an issue or submit a pull request.
 
-## License
-This project is licensed under the [MIT License](LICENSE).
-
 ## Live Site
 Visit the live site [Med-Track](https://limitless-sea-25303-7c8a3f9496d2.herokuapp.com/).
 
 ## Sources
 - [https://www.w3schools.com/w3css/tryit.asp?filename=tryw3css_templates_start_page&stacked=h]
 
-
 ## Contact
 For any questions or inquiries, please contact:
 
 - GitHub: [https://github.com/Essence1987/medtrack]
+
+## License
+This project is licensed under the [MIT License](LICENSE).2
