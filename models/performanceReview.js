@@ -40,6 +40,10 @@ PerformanceReview.init(
       type: DataTypes.INTEGER,
       allowNull: false,
     },
+    FacultyName: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
   },
   {
     sequelize,
