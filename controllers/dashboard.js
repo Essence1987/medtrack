@@ -14,10 +14,13 @@ router.get('/dashboard', protect, async (req, res) => {
         // Convert the userReviews data to plain JSON object
         const userReviewsData = userReviews.map(review => review.get({ plain: true }));
 
+        // Get the logged in user's name from the session
+        const username = req.session.username;
+
         console.log(userReviewsData);
 
         // Render the dashboard template, passing in the user reviews data
-        res.render('dashboard', { performanceReviews: userReviewsData });
+        res.render('dashboard', { username, performanceReviews: userReviewsData });
     } catch (error) {
         console.error('Error fetching user reviews:', error);
         res.status(500).send('Error fetching user reviews');
