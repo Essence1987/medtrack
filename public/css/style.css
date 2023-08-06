@@ -1,3 +1,7 @@
+* {
+    box-sizing: border-box;
+}
+
 .logo-text {
     font-size: 20px;
     color: #3e8ed0 !important;
@@ -71,6 +75,8 @@ div.second-container {
     background-color: #3e8ed0 !important;
     padding: 10px;
     border-radius: 8px;
+    color: white;
+    font-weight: bold;
 }
 
 .inner-dr-dropdown {
@@ -87,4 +93,52 @@ div.second-container {
 
 .dashboard-full {
     margin-top: 100px !important;
+    margin: 20px;
+}
+
+.db-header {
+    
+}
+
+.review-cards {
+    display: flex !important;
+    flex-wrap: wrap !important;
+}
+
+.list {
+    display: flex !important;
+}
+
+.single-card {
+    flex-basis: calc(33.33% - 20px);
+    margin: 5px;
+    padding: 10px;
+    box-sizing: border-box;
+    border: black;
+}
+
+.delete-btn {
+    background-color: #3e8ed0 !important;
+    color: white !important;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-top: 4px;
+    font-weight: bold;
+    border: #3e8ed0;
+}
+
+@media (max-width: 1020px) {
+    .review-cards {
+        justify-content: flex-start;
+    }
+
+    .single-card {
+        flex-basis: calc(50% - 20px);
+    }
+}
+
+@media (max-width: 720px) {
+    .single-card {
+        flex-basis: 100%;
+    }
 }
