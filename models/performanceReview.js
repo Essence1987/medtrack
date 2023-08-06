@@ -43,6 +43,7 @@ PerformanceReview.init(
     FacultyName: {
       type: DataTypes.STRING,
       allowNull: false,
+      defaultValue: "Unknown",
     },
   },
   {

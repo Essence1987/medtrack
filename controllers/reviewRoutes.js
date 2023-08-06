@@ -32,6 +32,7 @@ router.post('/add-review', async (req, res) => {
       OverallExperienceRating,
       OverallExperienceComments,
       FacultyName,
+      NewFacultyName, // Needed if the User wants to add a new faculty member
     } = req.body;
 
     // Get the logged-in user's ID from the session
@@ -43,6 +44,16 @@ router.post('/add-review', async (req, res) => {
       throw new Error('User not authenticated');
     }
 
+    let selectedFacultyName = FacultyName;
+    // Check if a New Faculty Name was provided
+    if (FacultyName === '__add_new__' && NewFacultyName) {
+      // Insert the new faculty member into the Faculty table
+      const newFaculty = await Faculty.create({
+        FacultyName: NewFacultyName,
+      });
+      selectedFacultyName = newFaculty.FacultyName;
+    }
+
     // Insert the data into the PerformanceReview table
     const performanceReview = await PerformanceReview.create({
       MedicalKnowledgeRating,
@@ -51,7 +62,7 @@ router.post('/add-review', async (req, res) => {
       HumanisticQualitiesRating,
       OverallExperienceRating,
       OverallExperienceComments,
-      FacultyName, // Save the selected faculty member's name in the PerformanceReview table
+      FacultyName: selectedFacultyName, // Save the selected faculty member's name in the PerformanceReview table
       UserId: userId, // Associate the review with the user ID
     });
 
