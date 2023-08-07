@@ -79,7 +79,9 @@ Now that you're logged in, you can now post reviews. Head to the "Add Review" pa
 Click the "Submit" button at the bottom of the screen. Your review is now submitted and can be looked at by the medical school boards to assist in creating a better program. We thank you for your input!
 
 ### Walkthrough
-***
+
+[MedTrackWalkthrough.webm](https://github.com/Essence1987/medtrack/assets/129562637/1a9b2688-40b7-4fcb-88d3-143b4f6830d2)
+
 
 ## API Routes
 - **POST** `/api/users`: Create a new user (registration).
