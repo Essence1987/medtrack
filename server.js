@@ -10,6 +10,7 @@ const models = require('./models')
 // const protect = require('./controllers/protect');
 // const dashboard = require('./controllers/dashboard');
 const route = require('./controllers')
+const { format } = require('date-fns');
 
 const app = express();
 const PORT = process.env.PORT || 3001;
@@ -29,7 +30,13 @@ const sess = {
 app.use(session(sess));
 
 // Create the Handlebars.js engine object with custom helper functions
-const hbs = exphbs.create({ /* helpers */ });
+const hbs = exphbs.create({ 
+  helpers: {
+    formatDate: (date) => {
+      return format(new Date(date), 'MM/dd/yyyy');
+    },
+  }, 
+});
 
 // Inform Express.js which template engine we're using
 app.engine('handlebars', hbs.engine);

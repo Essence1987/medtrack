@@ -97,7 +97,9 @@ div.second-container {
 }
 
 .db-header {
-    
+    background-color: skyblue;
+    border-radius: 8px;
+    text-align: center;
 }
 
 .review-cards {
@@ -125,6 +127,11 @@ div.second-container {
     margin-top: 4px;
     font-weight: bold;
     border: #3e8ed0;
+}
+
+.created-on {
+    color: gray;
+    font-size: small;
 }
 
 @media (max-width: 1020px) {

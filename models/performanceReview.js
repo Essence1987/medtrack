@@ -45,6 +45,10 @@ PerformanceReview.init(
       allowNull: false,
       defaultValue: "Unknown",
     },
+    createdAt: {
+      type: DataTypes.DATE,
+      defaultValue: DataTypes.NOW,
+    },
   },
   {
     sequelize,
