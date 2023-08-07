@@ -98,6 +98,7 @@ Click the "Submit" button at the bottom of the screen. Your review is now submit
 - bcrypt (for password hashing)
 - HTML, CSS, JavaScript (Frontend)
 - Handlebars (Templating Engine)
+- date-fns (new npm)
 
 ## Contributing
 Contributions to MedTrack are welcome! If you find any bugs or want to add new features, please open an issue or submit a pull request.
