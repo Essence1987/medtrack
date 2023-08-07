@@ -3,6 +3,7 @@ const router = express.Router();
 const PerformanceReview = require('../models/performanceReview');
 const Faculty = require('../models/faculty');
 const protect = require('./protect');
+const { format } = require('date-fns');
 
 // Route handler for /api/add-review (GET)
 router.get('/add-review', protect, async (req, res) => {
@@ -23,6 +24,9 @@ router.get('/add-review', protect, async (req, res) => {
 // Route handler for /api/add-review (POST)
 router.post('/add-review', async (req, res) => {
   try {
+
+    const currentDate = new Date();
+    const formattedDate = format(currentDate, "'Created on' MMMM dd, yyyy");
     // Get the form data from the request body
     const {
       MedicalKnowledgeRating,
@@ -64,6 +68,7 @@ router.post('/add-review', async (req, res) => {
       OverallExperienceComments,
       FacultyName: selectedFacultyName, // Save the selected faculty member's name in the PerformanceReview table
       UserId: userId, // Associate the review with the user ID
+      createdAt: formattedDate,
     });
 
     // Redirect to the /dashboard page after the INSERT completes
