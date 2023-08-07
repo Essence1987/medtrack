@@ -2,17 +2,42 @@
     box-sizing: border-box;
 }
 
+:root {
+    --shadow: rgb(120, 120, 120);
+}
+
+.my-nav {
+    padding: 8px !important;
+}
+
 .logo-text {
     font-size: 20px;
     color: #3e8ed0 !important;
+    text-shadow: 1px 1px 2px rgb(175, 175, 175) !important;
+}
+
+.login-button {
+    box-shadow: 2px 2px 4px;
+}
+
+.signup-button {
+    box-shadow: 2px 2px 4px rgb(64, 64, 64) !important;
+    font-weight: bold;
 }
 
 header.masthead {
     background-color: rgb(184, 239, 255) !important;
     background: url("../images/blue-background.jpg") no-repeat center center;
     background-size: cover;
+    margin-bottom: 0px !important;
+    position: relative;
+    z-index: 20;
+    box-shadow: 10px 10px 50px var(--shadow);
 }
 
+.main-title {
+    text-shadow: 4px 4px 8px rgb(163, 163, 163);
+}
 nav.my-navbar {
     background-color: rgb(130, 210, 247) !important;
 }
@@ -20,18 +45,31 @@ nav.my-navbar {
 div.first-container {
     background: url("../images/background-image1.jpg") no-repeat center center;
     background-size: cover;
+    position: relative;
+    z-index: 10;
+    box-shadow: 10px 10px 50px var(--shadow);
 }
 
 div.second-container {
     background: url("../images/2background-image.jpg") no-repeat center center;
     background-size: cover;
     opacity: 80%;
+    position: relative;
+    z-index: 9;
+    box-shadow: 8px 8px 40px var(--shadow);
 }
+
 .sub-context-hp {
     margin-top: 50px;
 }
 .contact-section {
     padding: 40px !important;
+    text-shadow: 3px 3px 4px black !important;
+    background-color: rgb(181, 181, 181) !important;
+    position: relative;
+    z-index: 7;
+    box-shadow: 4px 4px 20px rgb(171, 171, 171);
+    
 }
 
 .footer-section {
@@ -97,9 +135,10 @@ div.second-container {
 }
 
 .db-header {
-    background-color: skyblue;
+    background-color: rgb(148, 213, 239);
     border-radius: 8px;
     text-align: center;
+    box-shadow: 4px 4px 10px var(--shadow);
 }
 
 .review-cards {
@@ -117,6 +156,19 @@ div.second-container {
     padding: 10px;
     box-sizing: border-box;
     border: black;
+    box-shadow: 2px 2px 10px var(--shadow) !important;
+}
+
+.icon {
+    color: #3e8ed0
+}
+
+.faculty-name {
+    text-decoration: underline;
+}
+
+.end {
+    margin-bottom: 6px;
 }
 
 .delete-btn {
@@ -127,6 +179,7 @@ div.second-container {
     margin-top: 4px;
     font-weight: bold;
     border: #3e8ed0;
+    box-shadow: 2px 2px 4px var(--shadow);
 }
 
 .created-on {

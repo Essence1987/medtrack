@@ -13,3 +13,33 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     });
 });
+
+document.addEventListener('DOMContentLoaded', function() {
+  const modal = document.querySelector('.modal');
+  const closeBtn = document.querySelector('.close-btn');
+
+  function showModal(error) {
+    if (error) {
+    modal.querySelector('p').textContent = error;
+    }
+    modal.style.display = 'block';
+  }
+
+  function hideModal() {
+    modal.style.display = 'none';
+  }
+
+  const error = modal.dataset.error;
+
+  if (error) {
+    showModal(error);
+  }
+
+  closeBtn.addEventListener('click', hideModal);
+
+  window.addEventListener('click', function(event) {
+    if (event.target === modal) {
+      hideModal();
+    }
+  });
+});
