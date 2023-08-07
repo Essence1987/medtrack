@@ -9,13 +9,13 @@
             {{#each performanceReviews}}
             <li class="single-card box">
             <!-- Add a delete button for each performance review -->
-            <h4>Faculty Name: {{FacultyName}}</h4>
+            <h4 class="faculty-name">Faculty Name: {{FacultyName}}</h4>
             <p>Medical Knowledge Rating: {{MedicalKnowledgeRating}}</p>
             <p>Clinical Judgment Rating: {{ClinicalJudgmentRating}}</p>
             <p>Teaching Skills Rating: {{TeachingSkillsRating}}</p>
             <p>Humanistic Qualities Rating: {{HumanisticQualitiesRating}}</p>
             <p>Overall Experience Rating: {{OverallExperienceRating}}</p>
-            <p>Overall Experience Comments: {{OverallExperienceComments}}</p>
+            <p class="end">Overall Experience Comments: {{OverallExperienceComments}}</p>
             <p class="created-on">Created on: {{formatDate createdAt}}</p>
             <form action="/delete-review" method="POST">
                 <input type="hidden" name="reviewId" value="{{PerformanceReviewId}}">
